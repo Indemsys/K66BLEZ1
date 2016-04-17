@@ -595,7 +595,7 @@ int   FS_test3(T_fs_test *cbl)
   for (num = 0; num < 2; num++)
   {
     // Создаем имя файла
-    sprintf(filename, "%s%07d.BIN", fname_tmpl, num);
+    sprintf(filename, "%07d.BIN", num);
 
     error = f_open(&f, filename, (FA_WRITE + FA_CREATE_ALWAYS));
     if (error)
