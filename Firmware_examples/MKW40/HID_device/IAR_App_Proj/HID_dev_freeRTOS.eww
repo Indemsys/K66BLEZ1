@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+
+<workspace>
+  <project>
+    <path>$WS_DIR$\HID_dev_FreeRTOS.ewp</path>
+  </project>
+  <batchBuild>
+    <batchDefinition>
+      <name>all</name>
+      <member>
+        <project>ksdk_freertos_lib</project>
+        <configuration>Debug</configuration>
+      </member>
+      <member>
+        <project>ksdk_freertos_lib</project>
+        <configuration>Release</configuration>
+      </member>
+      <member>
+        <project>bluetooth_hid_device</project>
+        <configuration>Debug</configuration>
+      </member>
+      <member>
+        <project>bluetooth_hid_device</project>
+        <configuration>Release</configuration>
+      </member>
+    </batchDefinition>
+    <batchDefinition>
+      <name>Debug</name>
+      <member>
+        <project>ksdk_freertos_lib</project>
+        <configuration>Debug</configuration>
+      </member>
+      <member>
+        <project>bluetooth_hid_device</project>
+        <configuration>Debug</configuration>
+      </member>
+    </batchDefinition>
+    <batchDefinition>
+      <name>Release</name>
+      <member>
+        <project>ksdk_freertos_lib</project>
+        <configuration>Release</configuration>
+      </member>
+      <member>
+        <project>bluetooth_hid_device</project>
+        <configuration>Release</configuration>
+      </member>
+    </batchDefinition>
+  </batchBuild>
+</workspace>
+
+

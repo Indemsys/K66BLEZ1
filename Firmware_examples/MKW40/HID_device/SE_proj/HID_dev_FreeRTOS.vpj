@@ -1,0 +1,514 @@
+<!DOCTYPE Project SYSTEM "http://www.slickedit.com/dtd/vse/10.0/vpj.dtd">
+<Project
+    Version="10.0"
+    VendorName="SlickEdit"
+    TemplateName="Other C/C++"
+    WorkingDir=".">
+    <Config
+        Name="Debug"
+        Type="cpp"
+        DebugCallbackName="gdb"
+        OutputFile="%bdHID_dev_FreeRTOS"
+        CompilerConfigName="Latest Version">
+        <Menu>
+            <Target
+                Name="Compile"
+                MenuCaption="&amp;Compile"
+                CaptureOutputWith="ProcessBuffer"
+                OutputExts="*.o"
+                SaveOption="SaveCurrent"
+                RunFromDir="%rw">
+                <Exec CmdLine='cc -c -g %i %defd -o "%bd%n.o" "%f"'/>
+            </Target>
+            <Target
+                Name="Link"
+                MenuCaption="&amp;Link">
+                <Exec CmdLine='cc -g -o "%o" %f %libs'/>
+            </Target>
+            <Target
+                Name="Build"
+                MenuCaption="&amp;Build"
+                CaptureOutputWith="ProcessBuffer"
+                SaveOption="SaveWorkspaceFiles"
+                RunFromDir="%rw">
+                <Exec CmdLine='"%(VSLICKBIN1)vsbuild" build "%w" "%r"'/>
+            </Target>
+            <Target
+                Name="Rebuild"
+                MenuCaption="&amp;Rebuild"
+                CaptureOutputWith="ProcessBuffer"
+                SaveOption="SaveWorkspaceFiles"
+                RunFromDir="%rw">
+                <Exec CmdLine='"%(VSLICKBIN1)vsbuild" rebuild "%w" "%r"'/>
+            </Target>
+            <Target
+                Name="Debug"
+                MenuCaption="&amp;Debug"
+                SaveOption="SaveNone"
+                BuildFirst="1"
+                CaptureOutputWith="ProcessBuffer"
+                RunFromDir="%rw">
+                <Exec CmdLine='vsdebugio -prog "%o"'/>
+            </Target>
+            <Target
+                Name="Execute"
+                MenuCaption="E&amp;xecute"
+                SaveOption="SaveNone"
+                BuildFirst="1"
+                CaptureOutputWith="ProcessBuffer"
+                RunFromDir="%rw">
+                <Exec CmdLine='"%o"'/>
+            </Target>
+        </Menu>
+    </Config>
+    <Config
+        Name="Release"
+        Type="cpp"
+        DebugCallbackName="gdb"
+        OutputFile="%bdHID_dev_FreeRTOS"
+        CompilerConfigName="Latest Version">
+        <Menu>
+            <Target
+                Name="Compile"
+                MenuCaption="&amp;Compile"
+                CaptureOutputWith="ProcessBuffer"
+                SaveOption="SaveCurrent"
+                OutputExts="*.o"
+                RunFromDir="%rw">
+                <Exec CmdLine='cc -c -O %i %defd -o "%bd%n.o" "%f"'/>
+            </Target>
+            <Target
+                Name="Link"
+                MenuCaption="&amp;Link">
+                <Exec CmdLine='cc -O -o "%o" %f %libs'/>
+            </Target>
+            <Target
+                Name="Build"
+                MenuCaption="&amp;Build"
+                CaptureOutputWith="ProcessBuffer"
+                SaveOption="SaveWorkspaceFiles"
+                RunFromDir="%rw">
+                <Exec CmdLine='"%(VSLICKBIN1)vsbuild" build "%w" "%r"'/>
+            </Target>
+            <Target
+                Name="Rebuild"
+                MenuCaption="&amp;Rebuild"
+                CaptureOutputWith="ProcessBuffer"
+                SaveOption="SaveWorkspaceFiles"
+                RunFromDir="%rw">
+                <Exec CmdLine='"%(VSLICKBIN1)vsbuild" rebuild "%w" "%r"'/>
+            </Target>
+            <Target
+                Name="Debug"
+                MenuCaption="&amp;Debug"
+                SaveOption="SaveNone"
+                BuildFirst="1"
+                CaptureOutputWith="ProcessBuffer"
+                RunFromDir="%rw">
+                <Exec CmdLine='vsdebugio -prog "%o"'/>
+            </Target>
+            <Target
+                Name="Execute"
+                MenuCaption="E&amp;xecute"
+                SaveOption="SaveNone"
+                BuildFirst="1"
+                CaptureOutputWith="ProcessBuffer"
+                RunFromDir="%rw">
+                <Exec CmdLine='"%o"'/>
+            </Target>
+        </Menu>
+    </Config>
+    <Rules Name="Compile">
+        <Rule
+            InputExts="*.s"
+            OutputExts="*.o"
+            LinkObject="1">
+            <Exec CmdLine='as -o "%bd%n.o" "%f"'/>
+        </Rule>
+    </Rules>
+    <CustomFolders>
+        <Folder
+            Name="Source Files"
+            Filters="*.c;*.C;*.cc;*.cpp;*.cp;*.cxx;*.c++;*.prg;*.pas;*.dpr;*.asm;*.s;*.bas;*.java;*.cs;*.sc;*.e;*.cob;*.html;*.rc;*.tcl;*.py;*.pl;*.d;*.m;*.mm;*.go"></Folder>
+        <Folder
+            Name="Header Files"
+            Filters="*.h;*.H;*.hh;*.hpp;*.hxx;*.h++;*.inc;*.sh;*.cpy;*.if"></Folder>
+        <Folder
+            Name="Resource Files"
+            Filters="*.ico;*.cur;*.dlg"/>
+        <Folder
+            Name="Bitmaps"
+            Filters="*.bmp"/>
+        <Folder
+            Name="Other Files"
+            Filters=""></Folder>
+    </CustomFolders>
+    <Files AutoFolders="DirectoryView">
+        <Folder Name="../App">
+            <Folder Name="gatt_db">
+                <Folder Name="macros">
+                    <F N="../App/gatt_db/macros/gatt_db_macros.h"/>
+                </Folder>
+                <F N="../App/gatt_db/gatt_database.c"/>
+                <F N="../App/gatt_db/gatt_db_handles.h"/>
+            </Folder>
+            <F N="../App/app_config.c"/>
+            <F N="../App/app_preinclude.h"/>
+            <F N="../App/ApplMain.c"/>
+            <F N="../App/ApplMain.h"/>
+            <F N="../App/ble_controller_task.c"/>
+            <F N="../App/ble_controller_task_config.h"/>
+            <F N="../App/ble_host_task_config.h"/>
+            <F N="../App/ble_host_tasks.c"/>
+            <F N="../App/ble_init.c"/>
+            <F N="../App/ble_init.h"/>
+            <F N="../App/board.c"/>
+            <F N="../App/board.h"/>
+            <F N="../App/gatt_db.h"/>
+            <F N="../App/gatt_uuid128.h"/>
+            <F N="../App/gpio_pins.c"/>
+            <F N="../App/gpio_pins.h"/>
+            <F N="../App/hardware_init.c"/>
+            <F N="../App/HID_dev_app.c"/>
+            <F N="../App/HID_dev_app.h"/>
+            <F N="../App/pin_mux.c"/>
+            <F N="../App/pin_mux.h"/>
+            <F N="../App/startup.c"/>
+            <F N="../App/startup.h"/>
+            <F N="../App/startup_MKW40Z4.s"/>
+            <F N="../App/system_MKW40Z4.c"/>
+            <F N="../App/system_MKW40Z4.h"/>
+        </Folder>
+        <Folder Name="../Bluetooth">
+            <F N="../Bluetooth/att_errors.h"/>
+            <F N="../Bluetooth/att_types.h"/>
+            <F N="../Bluetooth/battery_interface.h"/>
+            <F N="../Bluetooth/battery_service.c"/>
+            <F N="../Bluetooth/ble_constants.h"/>
+            <F N="../Bluetooth/ble_general.h"/>
+            <F N="../Bluetooth/ble_globals.c"/>
+            <F N="../Bluetooth/ble_host_tasks.h"/>
+            <F N="../Bluetooth/ble_sig_defines.h"/>
+            <F N="../Bluetooth/ble_utils.h"/>
+            <F N="../Bluetooth/controller_interface.h"/>
+            <F N="../Bluetooth/device_info_interface.h"/>
+            <F N="../Bluetooth/device_info_service.c"/>
+            <F N="../Bluetooth/fsl_debug_console.h"/>
+            <F N="../Bluetooth/gap_interface.h"/>
+            <F N="../Bluetooth/gap_types.h"/>
+            <F N="../Bluetooth/gatt_client_interface.h"/>
+            <F N="../Bluetooth/gatt_database.h"/>
+            <F N="../Bluetooth/gatt_db_app_interface.h"/>
+            <F N="../Bluetooth/gatt_interface.h"/>
+            <F N="../Bluetooth/gatt_server_interface.h"/>
+            <F N="../Bluetooth/gatt_types.h"/>
+            <F N="../Bluetooth/hci_interface.h"/>
+            <F N="../Bluetooth/hci_transport.h"/>
+            <F N="../Bluetooth/hci_types.h"/>
+            <F N="../Bluetooth/hcit_serial_interface.c"/>
+            <F N="../Bluetooth/hid_interface.h"/>
+            <F N="../Bluetooth/hid_service.c"/>
+            <F N="../Bluetooth/l2ca_cb_interface.h"/>
+            <F N="../Bluetooth/l2ca_interface.h"/>
+            <F N="../Bluetooth/l2ca_types.h"/>
+            <F N="../Bluetooth/smp_packets.h"/>
+            <F N="../Bluetooth/smp_types.h"/>
+            <F N="../Bluetooth/vendor_debug_commands.h"/>
+        </Folder>
+        <Folder Name="../CMSIS">
+            <F N="../CMSIS/core_cm0plus.h"/>
+            <F N="../CMSIS/core_cmFunc.h"/>
+            <F N="../CMSIS/core_cmInstr.h"/>
+            <F N="../CMSIS/core_cmSimd.h"/>
+        </Folder>
+        <Folder Name="../Framework">
+            <Folder Name="Flash">
+                <F N="../Framework/Flash/CopyToRam.c"/>
+                <F N="../Framework/Flash/DEFlashPartition.c"/>
+                <F N="../Framework/Flash/DFlashGetProtection.c"/>
+                <F N="../Framework/Flash/DFlashSetProtection.c"/>
+                <F N="../Framework/Flash/EEEWrite.c"/>
+                <F N="../Framework/Flash/EERAMGetProtection.c"/>
+                <F N="../Framework/Flash/EERAMSetProtection.c"/>
+                <F N="../Framework/Flash/Flash_Adapter.c"/>
+                <F N="../Framework/Flash/Flash_Adapter.h"/>
+                <F N="../Framework/Flash/FlashCheckSum.c"/>
+                <F N="../Framework/Flash/FlashCommandSequence.c"/>
+                <F N="../Framework/Flash/FlashEraseAllBlock.c"/>
+                <F N="../Framework/Flash/FlashEraseResume.c"/>
+                <F N="../Framework/Flash/FlashEraseSector.c"/>
+                <F N="../Framework/Flash/FlashEraseSuspend.c"/>
+                <F N="../Framework/Flash/FlashGetSecurityState.c"/>
+                <F N="../Framework/Flash/FlashInit.c"/>
+                <F N="../Framework/Flash/FlashProgram.c"/>
+                <F N="../Framework/Flash/FlashProgramCheck.c"/>
+                <F N="../Framework/Flash/FlashProgramOnce.c"/>
+                <F N="../Framework/Flash/FlashProgramSection.c"/>
+                <F N="../Framework/Flash/FlashReadOnce.c"/>
+                <F N="../Framework/Flash/FlashReadResource.c"/>
+                <F N="../Framework/Flash/FlashSecurityBypass.c"/>
+                <F N="../Framework/Flash/FlashVerifyAllBlock.c"/>
+                <F N="../Framework/Flash/FlashVerifyBlock.c"/>
+                <F N="../Framework/Flash/FlashVerifySection.c"/>
+                <F N="../Framework/Flash/FTFx_KX_flash_config.h"/>
+                <F N="../Framework/Flash/PFlashGetProtection.c"/>
+                <F N="../Framework/Flash/PFlashSetProtection.c"/>
+                <F N="../Framework/Flash/PFlashSwap.c"/>
+                <F N="../Framework/Flash/PFlashSwapCtl.c"/>
+                <F N="../Framework/Flash/SetEEEEnable.c"/>
+                <F N="../Framework/Flash/SSD_FTFx.h"/>
+                <F N="../Framework/Flash/SSD_FTFx_Common.h"/>
+                <F N="../Framework/Flash/SSD_FTFx_Internal.h"/>
+                <F N="../Framework/Flash/SSD_Types.h"/>
+            </Folder>
+            <F N="../Framework/BLEDefaults.h"/>
+            <F N="../Framework/DCDC.c"/>
+            <F N="../Framework/DCDC.h"/>
+            <F N="../Framework/EmbeddedTypes.h"/>
+            <F N="../Framework/fsl_osa_ext.h"/>
+            <F N="../Framework/fsl_osa_ext_config.h"/>
+            <F N="../Framework/fsl_osa_ext_freertos.c"/>
+            <F N="../Framework/FunctionLib.c"/>
+            <F N="../Framework/FunctionLib.h"/>
+            <F N="../Framework/FwkInit.c"/>
+            <F N="../Framework/GenericList.c"/>
+            <F N="../Framework/GenericList.h"/>
+            <F N="../Framework/GPIO_IrqAdapter.c"/>
+            <F N="../Framework/GPIO_IrqAdapter.h"/>
+            <F N="../Framework/ifr_mkw40z4_radio.c"/>
+            <F N="../Framework/ifr_mkw40z4_radio.h"/>
+            <F N="../Framework/Keyboard.c"/>
+            <F N="../Framework/Keyboard.h"/>
+            <F N="../Framework/KW4xXcvrDrv.c"/>
+            <F N="../Framework/KW4xXcvrDrv.h"/>
+            <F N="../Framework/LED.c"/>
+            <F N="../Framework/LED.h"/>
+            <F N="../Framework/MemManager.c"/>
+            <F N="../Framework/MemManager.h"/>
+            <F N="../Framework/Messaging.c"/>
+            <F N="../Framework/Messaging.h"/>
+            <F N="../Framework/ModuleInfo.h"/>
+            <F N="../Framework/overwrites.h"/>
+            <F N="../Framework/Panic.c"/>
+            <F N="../Framework/Panic.h"/>
+            <F N="../Framework/Reset.c"/>
+            <F N="../Framework/RNG.c"/>
+            <F N="../Framework/RNG_Interface.h"/>
+            <F N="../Framework/SecLib.c"/>
+            <F N="../Framework/SecLib.h"/>
+            <F N="../Framework/SerialManager.c"/>
+            <F N="../Framework/SerialManager.h"/>
+            <F N="../Framework/TimersManager.c"/>
+            <F N="../Framework/TimersManager.h"/>
+            <F N="../Framework/TimersManagerInternal.h"/>
+            <F N="../Framework/TMR_Adapter.c"/>
+            <F N="../Framework/TMR_Adapter.h"/>
+            <F N="../Framework/tsm_ll_timing.c"/>
+            <F N="../Framework/tsm_ll_timing.h"/>
+            <F N="../Framework/tsm_timing_ble.h"/>
+            <F N="../Framework/tsm_timing_zigbee.h"/>
+            <F N="../Framework/ZigbeeDefaults.h"/>
+        </Folder>
+        <Folder Name="../FreeRTOS">
+            <Folder Name="config">
+                <F N="../FreeRTOS/config/FreeRTOSConfig.h"/>
+            </Folder>
+            <Folder Name="include">
+                <F N="../FreeRTOS/include/croutine.h"/>
+                <F N="../FreeRTOS/include/deprecated_definitions.h"/>
+                <F N="../FreeRTOS/include/event_groups.h"/>
+                <F N="../FreeRTOS/include/FreeRTOS.h"/>
+                <F N="../FreeRTOS/include/list.h"/>
+                <F N="../FreeRTOS/include/mpu_wrappers.h"/>
+                <F N="../FreeRTOS/include/portable.h"/>
+                <F N="../FreeRTOS/include/projdefs.h"/>
+                <F N="../FreeRTOS/include/queue.h"/>
+                <F N="../FreeRTOS/include/semphr.h"/>
+                <F N="../FreeRTOS/include/StackMacros.h"/>
+                <F N="../FreeRTOS/include/task.h"/>
+                <F N="../FreeRTOS/include/timers.h"/>
+            </Folder>
+            <Folder Name="port">
+                <F N="../FreeRTOS/port/port.c"/>
+                <F N="../FreeRTOS/port/portasm.s"/>
+                <F N="../FreeRTOS/port/portmacro.h"/>
+                <F N="../FreeRTOS/port/portTicks.h"/>
+            </Folder>
+            <Folder Name="src">
+                <F N="../FreeRTOS/src/croutine.c"/>
+                <F N="../FreeRTOS/src/event_groups.c"/>
+                <F N="../FreeRTOS/src/heap_1.c"/>
+                <F N="../FreeRTOS/src/heap_2.c"/>
+                <F N="../FreeRTOS/src/heap_3.c"/>
+                <F N="../FreeRTOS/src/heap_4.c"/>
+                <F N="../FreeRTOS/src/heap_5.c"/>
+                <F N="../FreeRTOS/src/list.c"/>
+                <F N="../FreeRTOS/src/queue.c"/>
+                <F N="../FreeRTOS/src/tasks.c"/>
+                <F N="../FreeRTOS/src/timers.c"/>
+            </Folder>
+        </Folder>
+        <Folder Name="../HAL">
+            <F N="../HAL/fsl_adc16_hal.c"/>
+            <F N="../HAL/fsl_adc16_hal.h"/>
+            <F N="../HAL/fsl_cmp_hal.c"/>
+            <F N="../HAL/fsl_cmp_hal.h"/>
+            <F N="../HAL/fsl_cmt_hal.c"/>
+            <F N="../HAL/fsl_cmt_hal.h"/>
+            <F N="../HAL/fsl_cop_hal.c"/>
+            <F N="../HAL/fsl_cop_hal.h"/>
+            <F N="../HAL/fsl_dac_hal.c"/>
+            <F N="../HAL/fsl_dac_hal.h"/>
+            <F N="../HAL/fsl_dma_hal.c"/>
+            <F N="../HAL/fsl_dma_hal.h"/>
+            <F N="../HAL/fsl_dmamux_hal.c"/>
+            <F N="../HAL/fsl_dmamux_hal.h"/>
+            <F N="../HAL/fsl_dspi_hal.c"/>
+            <F N="../HAL/fsl_dspi_hal.h"/>
+            <F N="../HAL/fsl_ftm_hal.h"/>
+            <F N="../HAL/fsl_gpio_hal.c"/>
+            <F N="../HAL/fsl_gpio_hal.h"/>
+            <F N="../HAL/fsl_i2c_hal.c"/>
+            <F N="../HAL/fsl_i2c_hal.h"/>
+            <F N="../HAL/fsl_llwu_hal.c"/>
+            <F N="../HAL/fsl_llwu_hal.h"/>
+            <F N="../HAL/fsl_lptmr_hal.c"/>
+            <F N="../HAL/fsl_lptmr_hal.h"/>
+            <F N="../HAL/fsl_lpuart_hal.h"/>
+            <F N="../HAL/fsl_ltc_hal.c"/>
+            <F N="../HAL/fsl_ltc_hal.h"/>
+            <F N="../HAL/fsl_mcg_hal.c"/>
+            <F N="../HAL/fsl_mcg_hal.h"/>
+            <F N="../HAL/fsl_mcg_hal_modes.c"/>
+            <F N="../HAL/fsl_mcg_hal_modes.h"/>
+            <F N="../HAL/fsl_misc_utilities.h"/>
+            <F N="../HAL/fsl_pit_hal.c"/>
+            <F N="../HAL/fsl_pit_hal.h"/>
+            <F N="../HAL/fsl_pmc_hal.h"/>
+            <F N="../HAL/fsl_port_hal.c"/>
+            <F N="../HAL/fsl_port_hal.h"/>
+            <F N="../HAL/fsl_rcm_hal.c"/>
+            <F N="../HAL/fsl_rcm_hal.h"/>
+            <F N="../HAL/fsl_rtc_hal.c"/>
+            <F N="../HAL/fsl_rtc_hal.h"/>
+            <F N="../HAL/fsl_sim_hal.h"/>
+            <F N="../HAL/fsl_sim_hal_MKW40Z4.c"/>
+            <F N="../HAL/fsl_sim_hal_MKW40Z4.h"/>
+            <F N="../HAL/fsl_smc_hal.c"/>
+            <F N="../HAL/fsl_smc_hal.h"/>
+            <F N="../HAL/fsl_tpm_hal.c"/>
+            <F N="../HAL/fsl_tpm_hal.h"/>
+            <F N="../HAL/fsl_trng_hal.c"/>
+            <F N="../HAL/fsl_trng_hal.h"/>
+            <F N="../HAL/fsl_tsi_hal.c"/>
+            <F N="../HAL/fsl_tsi_hal.h"/>
+            <F N="../HAL/fsl_tsi_v4_hal_specific.c"/>
+            <F N="../HAL/fsl_tsi_v4_hal_specific.h"/>
+        </Folder>
+        <Folder Name="../IAR_App_Proj">
+            <F N="../IAR_App_Proj/MKW40Z160xxx4_connectivity.icf"/>
+        </Folder>
+        <Folder Name="../OSA">
+            <F N="../OSA/fsl_os_abstraction.h"/>
+            <F N="../OSA/fsl_os_abstraction_free_rtos.c"/>
+            <F N="../OSA/fsl_os_abstraction_free_rtos.h"/>
+        </Folder>
+        <Folder Name="../Peripherial">
+            <F N="../Peripherial/fsl_adc16_common.c"/>
+            <F N="../Peripherial/fsl_adc16_driver.c"/>
+            <F N="../Peripherial/fsl_adc16_driver.h"/>
+            <F N="../Peripherial/fsl_bitaccess.h"/>
+            <F N="../Peripherial/fsl_clock_manager.c"/>
+            <F N="../Peripherial/fsl_clock_manager.h"/>
+            <F N="../Peripherial/fsl_clock_manager_common.c"/>
+            <F N="../Peripherial/fsl_clock_MKW40Z4.c"/>
+            <F N="../Peripherial/fsl_clock_MKW40Z4.h"/>
+            <F N="../Peripherial/fsl_cmp_common.c"/>
+            <F N="../Peripherial/fsl_cmp_driver.c"/>
+            <F N="../Peripherial/fsl_cmp_driver.h"/>
+            <F N="../Peripherial/fsl_cmt_common.c"/>
+            <F N="../Peripherial/fsl_cmt_driver.c"/>
+            <F N="../Peripherial/fsl_cmt_driver.h"/>
+            <F N="../Peripherial/fsl_cop_common.c"/>
+            <F N="../Peripherial/fsl_cop_driver.c"/>
+            <F N="../Peripherial/fsl_cop_driver.h"/>
+            <F N="../Peripherial/fsl_dac_common.c"/>
+            <F N="../Peripherial/fsl_dac_driver.c"/>
+            <F N="../Peripherial/fsl_dac_driver.h"/>
+            <F N="../Peripherial/fsl_device_registers.h"/>
+            <F N="../Peripherial/fsl_dma_common.c"/>
+            <F N="../Peripherial/fsl_dma_driver.c"/>
+            <F N="../Peripherial/fsl_dma_driver.h"/>
+            <F N="../Peripherial/fsl_dma_request.h"/>
+            <F N="../Peripherial/fsl_dspi_common.c"/>
+            <F N="../Peripherial/fsl_dspi_dma_master_driver.c"/>
+            <F N="../Peripherial/fsl_dspi_dma_master_driver.h"/>
+            <F N="../Peripherial/fsl_dspi_dma_slave_driver.c"/>
+            <F N="../Peripherial/fsl_dspi_dma_slave_driver.h"/>
+            <F N="../Peripherial/fsl_dspi_master_driver.c"/>
+            <F N="../Peripherial/fsl_dspi_master_driver.h"/>
+            <F N="../Peripherial/fsl_dspi_shared_function.c"/>
+            <F N="../Peripherial/fsl_dspi_shared_function.h"/>
+            <F N="../Peripherial/fsl_dspi_slave_driver.c"/>
+            <F N="../Peripherial/fsl_dspi_slave_driver.h"/>
+            <F N="../Peripherial/fsl_ftm_driver.h"/>
+            <F N="../Peripherial/fsl_gpio_common.c"/>
+            <F N="../Peripherial/fsl_gpio_driver.c"/>
+            <F N="../Peripherial/fsl_gpio_driver.h"/>
+            <F N="../Peripherial/fsl_hwtimer.c"/>
+            <F N="../Peripherial/fsl_hwtimer.h"/>
+            <F N="../Peripherial/fsl_hwtimer_pit.c"/>
+            <F N="../Peripherial/fsl_hwtimer_pit.h"/>
+            <F N="../Peripherial/fsl_hwtimer_systick.c"/>
+            <F N="../Peripherial/fsl_hwtimer_systick.h"/>
+            <F N="../Peripherial/fsl_i2c_common.c"/>
+            <F N="../Peripherial/fsl_i2c_master_driver.c"/>
+            <F N="../Peripherial/fsl_i2c_master_driver.h"/>
+            <F N="../Peripherial/fsl_i2c_shared_function.c"/>
+            <F N="../Peripherial/fsl_i2c_shared_function.h"/>
+            <F N="../Peripherial/fsl_i2c_slave_driver.c"/>
+            <F N="../Peripherial/fsl_i2c_slave_driver.h"/>
+            <F N="../Peripherial/fsl_interrupt_manager.c"/>
+            <F N="../Peripherial/fsl_interrupt_manager.h"/>
+            <F N="../Peripherial/fsl_lptmr_common.c"/>
+            <F N="../Peripherial/fsl_lptmr_driver.c"/>
+            <F N="../Peripherial/fsl_lptmr_driver.h"/>
+            <F N="../Peripherial/fsl_lpuart_common.c"/>
+            <F N="../Peripherial/fsl_lpuart_dma_driver.c"/>
+            <F N="../Peripherial/fsl_lpuart_dma_driver.h"/>
+            <F N="../Peripherial/fsl_lpuart_driver.c"/>
+            <F N="../Peripherial/fsl_lpuart_driver.h"/>
+            <F N="../Peripherial/fsl_ltc_common.c"/>
+            <F N="../Peripherial/fsl_ltc_driver.c"/>
+            <F N="../Peripherial/fsl_ltc_driver.h"/>
+            <F N="../Peripherial/fsl_ltc_driver_aes.c"/>
+            <F N="../Peripherial/fsl_ltc_driver_aes.h"/>
+            <F N="../Peripherial/fsl_ltc_driver_aes_ccm.c"/>
+            <F N="../Peripherial/fsl_ltc_driver_hash.c"/>
+            <F N="../Peripherial/fsl_ltc_driver_hash.h"/>
+            <F N="../Peripherial/fsl_ltc_driver_prv.h"/>
+            <F N="../Peripherial/fsl_pit_common.c"/>
+            <F N="../Peripherial/fsl_pit_driver.c"/>
+            <F N="../Peripherial/fsl_pit_driver.h"/>
+            <F N="../Peripherial/fsl_power_manager.c"/>
+            <F N="../Peripherial/fsl_power_manager.h"/>
+            <F N="../Peripherial/fsl_power_manager_common.h"/>
+            <F N="../Peripherial/fsl_rtc_common.c"/>
+            <F N="../Peripherial/fsl_rtc_driver.c"/>
+            <F N="../Peripherial/fsl_rtc_driver.h"/>
+            <F N="../Peripherial/fsl_tpm_common.c"/>
+            <F N="../Peripherial/fsl_tpm_driver.c"/>
+            <F N="../Peripherial/fsl_tpm_driver.h"/>
+            <F N="../Peripherial/fsl_trng_common.c"/>
+            <F N="../Peripherial/fsl_trng_driver.c"/>
+            <F N="../Peripherial/fsl_trng_driver.h"/>
+            <F N="../Peripherial/fsl_tsi_common.c"/>
+            <F N="../Peripherial/fsl_tsi_driver.c"/>
+            <F N="../Peripherial/fsl_tsi_driver.h"/>
+            <F N="../Peripherial/fsl_tsi_v4_driver_specific.c"/>
+            <F N="../Peripherial/MKW40Z4.h"/>
+            <F N="../Peripherial/MKW40Z4_extension.h"/>
+            <F N="../Peripherial/MKW40Z4_features.h"/>
+        </Folder>
+    </Files>
+</Project>
