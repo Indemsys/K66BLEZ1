@@ -1,0 +1,240 @@
+###############################################################################
+#
+# IAR ELF Linker V7.60.2.11341/W32 for ARM                18/May/2016  17:39:53
+# Copyright 2007-2016 IAR Systems AB.
+#
+#    Output file  =  
+#        C:\Embedded\Projects\Barduva\SB200M\SolenoidControl\Firmware\Debug\Exe\SimplestApp.out
+#    Map file     =  
+#        C:\Embedded\Projects\Barduva\SB200M\SolenoidControl\Firmware\Debug\List\SimplestApp.map
+#    Command line =  
+#        C:\Embedded\Projects\Barduva\SB200M\SolenoidControl\Firmware\Debug\Obj\K66BLEZ1_GPIO.o
+#        C:\Embedded\Projects\Barduva\SB200M\SolenoidControl\Firmware\Debug\Obj\K66BLEZ1_INIT_SYS.o
+#        C:\Embedded\Projects\Barduva\SB200M\SolenoidControl\Firmware\Debug\Obj\main.o
+#        C:\Embedded\Projects\Barduva\SB200M\SolenoidControl\Firmware\Debug\Obj\startup_MK66F18.o
+#        -o
+#        C:\Embedded\Projects\Barduva\SB200M\SolenoidControl\Firmware\Debug\Exe\SimplestApp.out
+#        --redirect _Printf=_PrintfFull --redirect _Scanf=_ScanfFull --map
+#        C:\Embedded\Projects\Barduva\SB200M\SolenoidControl\Firmware\Debug\List\SimplestApp.map
+#        --config
+#        C:\Embedded\Projects\Barduva\SB200M\SolenoidControl\Firmware\MK66FN2M0xxx18_flash.icf
+#        --semihosting --entry __iar_program_start --vfe
+#
+###############################################################################
+
+*******************************************************************************
+*** RUNTIME MODEL ATTRIBUTES
+***
+
+CppFlavor       = *
+__SystemLibrary = DLib
+
+
+*******************************************************************************
+*** PLACEMENT SUMMARY
+***
+
+"A1":  place at 0x00000000 { ro section .intvec };
+"P1":  place in [from 0x00000400 to 0x0000040f] { section FlashConfig };
+"P2":  place in [from 0x00000000 to 0x000003ff] |
+                [from 0x00000410 to 0x001fffff] { ro };
+"P6":  place in [from 0x2002e000 to 0x2002ffff] { block CSTACK };
+
+  Section      Kind        Address    Size  Object
+  -------      ----        -------    ----  ------
+"A1":                                0x400
+  .intvec      ro code  0x00000000   0x400  startup_MK66F18.o [1]
+                      - 0x00000400   0x400
+
+"P1":                                 0x10
+  FlashConfig  ro code  0x00000400    0x10  startup_MK66F18.o [1]
+                      - 0x00000410    0x10
+
+"P2":                                0xcbc
+  .text        ro code  0x00000410   0x87c  K66BLEZ1_GPIO.o [1]
+  .text        ro code  0x00000c8c    0x56  ABImemcpy_unaligned.o [5]
+  .text        ro code  0x00000ce2     0x2  startup_MK66F18.o [1]
+  .text        ro code  0x00000ce4   0x160  K66BLEZ1_INIT_SYS.o [1]
+  .text        ro code  0x00000e44    0x24  startup_MK66F18.o [1]
+  .text        ro code  0x00000e68    0x22  fpinit_M.o [4]
+  .text        ro code  0x00000e8a     0x2  startup_MK66F18.o [1]
+  .text        ro code  0x00000e8c    0x1c  main.o [1]
+  .text        ro code  0x00000ea8    0x1a  startup_MK66F18.o [1]
+  .text        ro code  0x00000ec2     0x2  startup_MK66F18.o [1]
+  .text        ro code  0x00000ec4    0x1a  cmain.o [5]
+  .text        ro code  0x00000ede     0x4  low_level_init.o [3]
+  .text        ro code  0x00000ee2     0x4  exit.o [3]
+  .text        ro code  0x00000ee6     0x2  startup_MK66F18.o [1]
+  .text        ro code  0x00000ee8     0xa  cexit.o [5]
+  .text        ro code  0x00000ef2     0x2  startup_MK66F18.o [1]
+  .text        ro code  0x00000ef4    0x14  exit.o [6]
+  .text        ro code  0x00000f08     0xc  cstartup_M.o [5]
+  .text        ro code  0x00000f14     0x8  startup_MK66F18.o [1]
+  .text        ro code  0x00000f1c     0x8  startup_MK66F18.o [1]
+  .text        ro code  0x00000f24     0x8  startup_MK66F18.o [1]
+  .text        ro code  0x00000f2c     0x8  startup_MK66F18.o [1]
+  .text        ro code  0x00000f34     0x8  startup_MK66F18.o [1]
+  .text        ro code  0x00000f3c     0x8  startup_MK66F18.o [1]
+  .text        ro code  0x00000f44     0x8  startup_MK66F18.o [1]
+  .text        ro code  0x00000f4c     0x8  startup_MK66F18.o [1]
+  .text        ro code  0x00000f54     0x8  startup_MK66F18.o [1]
+  .text        ro code  0x00000f5c     0x8  startup_MK66F18.o [1]
+  .text        ro code  0x00000f64     0x8  startup_MK66F18.o [1]
+  .text        ro code  0x00000f6c     0x8  startup_MK66F18.o [1]
+  .text        ro code  0x00000f74     0x8  startup_MK66F18.o [1]
+  .text        ro code  0x00000f7c     0x8  startup_MK66F18.o [1]
+  .text        ro code  0x00000f84     0x8  startup_MK66F18.o [1]
+  .text        ro code  0x00000f8c     0x8  startup_MK66F18.o [1]
+  .text        ro code  0x00000f94     0x8  startup_MK66F18.o [1]
+  .text        ro code  0x00000f9c     0x8  startup_MK66F18.o [1]
+  .text        ro code  0x00000fa4     0x8  startup_MK66F18.o [1]
+  .text        ro code  0x00000fac     0x8  startup_MK66F18.o [1]
+  .text        ro code  0x00000fb4     0x8  startup_MK66F18.o [1]
+  .text        ro code  0x00000fbc     0x8  startup_MK66F18.o [1]
+  .text        ro code  0x00000fc4     0x8  startup_MK66F18.o [1]
+  .text        ro code  0x00000fcc     0x8  startup_MK66F18.o [1]
+  .text        ro code  0x00000fd4     0x8  startup_MK66F18.o [1]
+  .text        ro code  0x00000fdc     0x8  startup_MK66F18.o [1]
+  .text        ro code  0x00000fe4     0x8  startup_MK66F18.o [1]
+  .text        ro code  0x00000fec     0x8  startup_MK66F18.o [1]
+  .text        ro code  0x00000ff4     0x8  startup_MK66F18.o [1]
+  .text        ro code  0x00000ffc     0x8  startup_MK66F18.o [1]
+  .text        ro code  0x00001004     0x8  startup_MK66F18.o [1]
+  .text        ro code  0x0000100c     0x8  startup_MK66F18.o [1]
+  .text        ro code  0x00001014     0x8  startup_MK66F18.o [1]
+  .text        ro code  0x0000101c     0x8  startup_MK66F18.o [1]
+  .text        ro code  0x00001024     0x8  startup_MK66F18.o [1]
+  .text        ro code  0x0000102c     0x8  startup_MK66F18.o [1]
+  .text        ro code  0x00001034     0x8  startup_MK66F18.o [1]
+  .text        ro code  0x0000103c     0x8  startup_MK66F18.o [1]
+  .text        ro code  0x00001044     0x8  startup_MK66F18.o [1]
+  .text        ro code  0x0000104c     0x8  startup_MK66F18.o [1]
+  .text        ro code  0x00001054     0x8  startup_MK66F18.o [1]
+  .text        ro code  0x0000105c     0x8  startup_MK66F18.o [1]
+  .text        ro code  0x00001064     0x8  startup_MK66F18.o [1]
+  .text        ro code  0x0000106c     0x8  startup_MK66F18.o [1]
+  .text        ro code  0x00001074     0x8  startup_MK66F18.o [1]
+  .text        ro code  0x0000107c     0x8  startup_MK66F18.o [1]
+  .text        ro code  0x00001084     0x8  startup_MK66F18.o [1]
+  .text        ro code  0x0000108c     0x8  startup_MK66F18.o [1]
+  .text        ro code  0x00001094     0x8  startup_MK66F18.o [1]
+  .text        ro code  0x0000109c     0x8  startup_MK66F18.o [1]
+  .text        ro code  0x000010a4     0x8  startup_MK66F18.o [1]
+  .text        ro code  0x000010ac     0x8  startup_MK66F18.o [1]
+  .text        ro code  0x000010b4     0x8  startup_MK66F18.o [1]
+  .text        ro code  0x000010bc     0x8  startup_MK66F18.o [1]
+  .text        ro code  0x000010c4     0x2  startup_MK66F18.o [1]
+  .text        ro code  0x000010c6     0x2  startup_MK66F18.o [1]
+  .text        ro code  0x000010c8     0x2  startup_MK66F18.o [1]
+  .text        ro code  0x000010ca     0x2  startup_MK66F18.o [1]
+                      - 0x000010cc   0xcbc
+
+"P6":                               0x2000
+  CSTACK                0x2002e000  0x2000  <Block>
+    CSTACK     uninit   0x2002e000  0x2000  <Block tail>
+                      - 0x20030000  0x2000
+
+
+
+*******************************************************************************
+*** MODULE SUMMARY
+***
+
+    Module                 ro code  rw data
+    ------                 -------  -------
+C:\Embedded\Projects\Barduva\SB200M\SolenoidControl\Firmware\Debug\Obj: [1]
+    K66BLEZ1_GPIO.o          2 172
+    K66BLEZ1_INIT_SYS.o        352
+    main.o                      28
+    startup_MK66F18.o        1 552
+    ---------------------------------------
+    Total:                   4 104
+
+command line: [2]
+    ---------------------------------------
+    Total:
+
+dl7M_tln.a: [3]
+    exit.o                       4
+    low_level_init.o             4
+    ---------------------------------------
+    Total:                       8
+
+m7M_tls.a: [4]
+    fpinit_M.o                  34
+    ---------------------------------------
+    Total:                      34
+
+rt7M_tl.a: [5]
+    ABImemcpy_unaligned.o       86
+    cexit.o                     10
+    cmain.o                     26
+    cstartup_M.o                12
+    ---------------------------------------
+    Total:                     134
+
+shb_l.a: [6]
+    exit.o                      20
+    ---------------------------------------
+    Total:                      20
+
+    Linker created                    8 192
+-------------------------------------------
+    Grand Total:             4 300    8 192
+
+
+*******************************************************************************
+*** ENTRY LIST
+***
+
+Entry                    Address   Size  Type      Object
+-----                    -------   ----  ----      ------
+?main                 0x00000ec5         Code  Gb  cmain.o [5]
+CSTACK$$Base          0x2002e000          --   Gb  - Linker created -
+CSTACK$$Limit         0x20030000          --   Gb  - Linker created -
+Config_pin            0x00000411   0x74  Code  Gb  K66BLEZ1_GPIO.o [1]
+Delay_m7              0x00000ead         Code  Gb  startup_MK66F18.o [1]
+Init_MK66FN2M0VLQ18_K66BLEZ1
+                      0x00000ce5   0x26  Code  Gb  K66BLEZ1_INIT_SYS.o [1]
+Init_cpu              0x00000d0b   0xfe  Code  Gb  K66BLEZ1_INIT_SYS.o [1]
+Init_pins             0x00000485   0x32  Code  Gb  K66BLEZ1_GPIO.o [1]
+K66BLEZ1_pins_conf    0x000004bc  0x7d0  Data  Gb  K66BLEZ1_GPIO.o [1]
+Region$$Table$$Base   0x00000000          --   Gb  - Linker created -
+Region$$Table$$Limit  0x00000000          --   Gb  - Linker created -
+__RAM_VECTOR_TABLE_SIZE {Abs}
+                      0x00000000          --   Gb  command line/config [2]
+__VECTOR_RAM {Abs}    0x00000000          --   Gb  command line/config [2]
+__VECTOR_TABLE {Abs}  0x00000000          --   Gb  command line/config [2]
+__Vectors             0x00000000          --   Gb  startup_MK66F18.o [1]
+__Vectors_End         0x00000400         Data  Gb  startup_MK66F18.o [1]
+__Vectors_Size {Abs}  0x00000400          --   Gb  startup_MK66F18.o [1]
+__cmain               0x00000ec5         Code  Gb  cmain.o [5]
+__exit                0x00000ef5   0x14  Code  Gb  exit.o [6]
+__iar_init_vfp        0x00000e69         Code  Gb  fpinit_M.o [4]
+__iar_program_start   0x00000f09         Code  Gb  cstartup_M.o [5]
+__iar_unaligned___aeabi_memcpy4
+                      0x00000c8d         Code  Gb  ABImemcpy_unaligned.o [5]
+__iar_unaligned___aeabi_memcpy8
+                      0x00000c8d         Code  Gb  ABImemcpy_unaligned.o [5]
+__low_level_init      0x00000edf    0x4  Code  Gb  low_level_init.o [3]
+__vector_table        0x00000000         Data  Gb  startup_MK66F18.o [1]
+__vector_table_0x1c   0x0000001c         Data  Gb  startup_MK66F18.o [1]
+_call_main            0x00000ed1         Code  Gb  cmain.o [5]
+_exit                 0x00000ee9         Code  Gb  cexit.o [5]
+_main                 0x00000edb         Code  Gb  cmain.o [5]
+exit                  0x00000ee3    0x4  Code  Gb  exit.o [3]
+main                  0x00000e8d   0x1c  Code  Gb  main.o [1]
+
+
+[1] = C:\Embedded\Projects\Barduva\SB200M\SolenoidControl\Firmware\Debug\Obj
+[2] = command line
+[3] = dl7M_tln.a
+[4] = m7M_tls.a
+[5] = rt7M_tl.a
+[6] = shb_l.a
+
+  4 300 bytes of readonly  code memory
+  8 192 bytes of readwrite data memory
+
+Errors: none
+Warnings: none
